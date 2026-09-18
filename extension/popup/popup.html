@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CyberCheck</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="popup-container">
+    <header class="header">
+      <div class="logo">
+        <span class="shield">🛡️</span>
+        <h1>CyberCheck</h1>
+      </div>
+      <span class="tag">V1.0.1</span>
+    </header>
+
+    <main class="main">
+      <section class="card current-site" id="currentSite">
+        <h2>Current Website</h2>
+        <p class="url-display" id="currentUrl">Loading...</p>
+        <div class="result" id="resultArea">
+          <div class="score" id="scoreDisplay">-</div>
+          <div class="level" id="levelDisplay">SCANNING</div>
+        </div>
+        <button class="btn primary" id="scanBtn">Scan This Page</button>
+        <button class="btn secondary" id="clipboardBtn">Check Clipboard</button>
+      </section>
+
+      <section class="card findings" id="findingsArea" style="display:none;">
+        <h2>Findings</h2>
+        <ul id="findingsList"></ul>
+      </section>
+
+      <section class="card qr-section">
+        <h2>QR Code Analysis</h2>
+        <p class="subtext">Scan a QR image or paste its destination URL to check it before visiting.</p>
+        <div class="qr-form">
+          <input type="text" id="qrUrl" placeholder="https://example.com" />
+          <button class="btn secondary" id="qrScanBtn">Check URL</button>
+        </div>
+        <label class="file-label">Scan QR image <input type="file" id="qrImage" accept="image/*" /></label>
+        <div class="qr-result" id="qrResult" style="display:none;"></div>
+      </section>
+    </main>
+    <p class="status" id="status" role="status">Ready.</p>
+
+    <footer class="footer">
+      <p>Only analyzes URLs you choose. No browsing history collected.</p>
+    </footer>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

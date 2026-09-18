@@ -1,0 +1,145 @@
+:root {
+  --bg: #0f1115;
+  --surface: #16181f;
+  --surface-2: #1c1f28;
+  --text: #e8e8f0;
+  --text-muted: #9ca3af;
+  --primary: #22d3ee;
+  --low: #22c55e;
+  --medium: #facc15;
+  --high: #fb923c;
+  --critical: #f43f5e;
+  --border: rgba(255,255,255,0.06);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  width: 360px;
+  min-height: 480px;
+}
+
+.popup-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo { display: flex; align-items: center; gap: 10px; }
+.shield { font-size: 24px; }
+.header h1 { font-size: 18px; font-weight: 700; letter-spacing: -0.5px; }
+.tag { font-size: 11px; color: var(--text-muted); border: 1px solid var(--border); padding: 2px 6px; border-radius: 4px; }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.card h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); margin-bottom: 10px; }
+
+.current-site { border-left: 4px solid var(--primary); }
+.url-display { word-break: break-all; color: var(--text); font-family: monospace; font-size: 13px; margin-bottom: 14px; }
+
+.result { display: flex; align-items: center; gap: 16px; margin-bottom: 14px; }
+.score { font-size: 36px; font-weight: 800; line-height: 1; letter-spacing: -2px; }
+.level { font-size: 12px; font-weight: 700; padding: 4px 8px; border-radius: 6px; }
+
+.score-low .score { color: var(--low); }
+.score-medium .score { color: var(--medium); }
+.score-high .score { color: var(--high); }
+.score-critical .score { color: var(--critical); }
+
+.level { color: var(--text); background: var(--surface-2); }
+
+.btn {
+  width: 100%;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+.btn:hover { opacity: 0.9; }
+.btn.primary { background: var(--primary); color: #0a0c10; }
+.btn.secondary { background: var(--surface-2); color: var(--text); border: 1px solid var(--border); }
+
+.findings ul { list-style: none; }
+.findings li { display: flex; align-items: flex-start; gap: 8px; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
+.findings li:last-child { border-bottom: none; }
+.dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
+.dot-high { background: var(--high); }
+.dot-critical { background: var(--critical); }
+.dot-medium { background: var(--medium); }
+.dot-low { background: var(--low); }
+
+.qr-section .subtext { color: var(--text-muted); font-size: 12px; margin-bottom: 10px; }
+.qr-form { display: flex; gap: 8px; }
+.qr-form input { flex: 1; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg); color: var(--text); font-size: 13px; }
+.qr-form input:focus { outline: 2px solid var(--primary); border-color: transparent; }
+
+.qr-result { margin-top: 10px; padding: 10px; border-radius: 8px; background: var(--bg); border: 1px solid var(--border); font-size: 13px; }
+
+.footer { text-align: center; color: var(--text-muted); font-size: 11px; }
+
+
+#clipboardBtn { margin-top: 8px; }
+
+.btn:disabled { opacity: 0.55; cursor: wait; }
+
+.status {
+  min-height: 18px;
+  color: var(--text-muted);
+  font-size: 11px;
+  line-height: 1.4;
+  text-align: center;
+  padding: 4px 12px 0;
+}
+
+.file-label {
+  display: block;
+  margin-top: 10px;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.file-label input {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  color: var(--text);
+  font-size: 12px;
+}
+
+.qr-message {
+  margin-top: 5px;
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.brand-warning {
+  margin-top: 7px;
+  color: var(--critical);
+}
+
+.qr-result ul {
+  margin: 8px 0 0 16px;
+  color: var(--text-muted);
+}
+
+.error-text { color: var(--critical); }

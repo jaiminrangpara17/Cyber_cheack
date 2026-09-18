@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CyberCheck Warning</title>
+  <link rel="stylesheet" href="warning.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="logo">
+        <span class="shield">🛡️</span>
+        <h1>CyberCheck</h1>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="alert-box" id="alertBox">
+        <h2 id="levelTitle">Analysis</h2>
+        <div class="score-row">
+          <span class="big-score" id="bigScore">0</span>
+          <span class="big-level" id="bigLevel">LOW</span>
+        </div>
+        <p class="message" id="messageText">Analyzing...</p>
+      </section>
+
+      <section class="details">
+        <h3>Analyzed URL</h3>
+        <code class="url-code" id="analyzedUrl">-</code>
+
+        <h3>Findings</h3>
+        <ul class="findings-list" id="findingsList"></ul>
+
+        <div class="brand-box" id="brandBox" style="display:none;">
+          <h3>Possible Impersonation</h3>
+          <p>The site appears to reference <strong id="brandName">-</strong>.</p>
+          <p>The actual domain does not match the expected official domain.</p>
+        </div>
+      </section>
+
+      <section class="explanation">
+        <h3>What does this mean?</h3>
+        <p>CyberCheck uses explainable heuristics to evaluate URLs. A high score does not confirm malicious intent, but it indicates unusual or suspicious characteristics that deserve attention before entering sensitive information.</p>
+      </section>
+
+      <section class="actions">
+        <a href="#" class="btn close-btn" id="closeBtn">Close</a>
+      </section>
+    </main>
+  </div>
+  <script src="warning.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+/* CyberCheck content styles - isolated to avoid conflicts */
+.cyber-check-highlight {
+  outline: 2px solid #22d3ee !important;
+  outline-offset: 2px !important;
+  transition: outline 0.2s ease;
+}
